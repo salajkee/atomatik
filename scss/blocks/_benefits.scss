@@ -1,0 +1,126 @@
+.benefits {
+  margin-top: 250px;
+  background-color: var(--white-bg);
+
+  &__title {
+    text-align: center;
+  }
+
+  &__items {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  &__item {
+    height: auto;
+    min-height: 280px;
+    max-height: 100%;
+    padding: 20px 20px 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid var(--grey);
+
+    &-left-elem,
+    &-right-elem {
+      width: 30px;
+      height: calc(100% + 2px);
+      position: absolute;
+      top: -1px;
+      left: 0;
+      background-color: var(--white-bg);
+    }
+
+    &-right-elem {
+      left: auto;
+      right: 0;
+    }
+
+    &:nth-child(1) {
+      border-right: none;
+    }
+
+    &:nth-child(2) {
+      border-right: none;
+      border-left: none;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -10px;
+        width: 1px;
+        height: 100%;
+        background-color: var(--grey);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -10px;
+        width: 1px;
+        height: 100%;
+        background-color: var(--grey);
+      }
+    }
+
+    &:nth-child(3) {
+      border-left: none;
+    }
+
+    &-title {
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    &-descr {
+      margin-top: auto;
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
+@media (max-width: 1240px) {
+  .benefits {
+    margin-top: 180px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .benefits {
+    &__items {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__item {
+      height: 100%;
+      max-height: auto;
+      min-height: auto;
+      padding: 20px;
+      border: 1px solid var(--grey) !important;
+
+      &::before,
+      &::after {
+        content: none !important;
+      }
+
+      &-title {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits {
+    margin-top: 160px;
+
+    &__title {
+      text-align: left;
+    }
+  }
+}

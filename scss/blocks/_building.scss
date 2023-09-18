@@ -1,0 +1,138 @@
+.building {
+  margin-top: 250px;
+  background-color: var(--white-bg);
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__descr {
+    width: 440px;
+    margin-top: 7px;
+  }
+
+  &__info {
+    width: 440px;
+    margin-top: 24px;
+  }
+
+  &__items {
+    margin-top: 10px;
+    border-top: 1px solid var(--pure-grey);
+  }
+
+  &__item {
+    margin-top: 50px;
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    &-descr {
+      grid-column: 1 / 2;
+      margin-top: auto;
+      color: rgba(#646464, 0.6);
+    }
+
+    &-img {
+      grid-column: 2 / 4;
+      margin-top: auto;
+      width: 100%;
+      height: auto;
+      max-height: 596px;
+      border-radius: 5px;
+    }
+
+    &-link {
+      grid-column: 2 / 3;
+      width: fit-content;
+      height: fit-content;
+      display: inline-block;
+      margin-top: 7px;
+      color: var(--black);
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 1.3px;
+        background-color: var(--black);
+      }
+    }
+
+    &-btn {
+      grid-column: 3 / 4;
+    }
+  }
+}
+
+@media (max-width: 1240px) {
+  .building {
+    margin-top: 180px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .building {
+    &__top {
+      flex-direction: column;
+    }
+
+    &__descr {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 440px;
+    }
+
+    &__info {
+      max-width: 440px;
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .building {
+    margin-top: 160px;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+
+      &-descr {
+        margin-top: 15px;
+        order: 2;
+      }
+
+      &-img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        object-position: -46px;
+        order: 0;
+      }
+
+      &-link {
+        margin-top: 10px;
+        order: 1;
+        br {
+          display: none;
+        }
+      }
+
+      &-btn {
+        width: 100%;
+        margin-top: 20px;
+        order: 3;
+      }
+    }
+  }
+}

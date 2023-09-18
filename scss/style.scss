@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+@import "./reset";
+
+:root {
+  --white: #f9f9f9;
+  --black: #0d0d0d;
+  --pure-grey: #f1f1f1;
+  --grey: #646464;
+  --white-bg: #ffffff;
+  --accent-blue: #002962;
+  --accent-yellow: #fbe300;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: var(--black);
+  background-color: var(--white-bg);
+  scroll-behavior: smooth;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1380px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.h1 {
+  font-weight: 500;
+  font-size: 76px;
+  line-height: 105%;
+  letter-spacing: -4.56px;
+}
+
+.h2 {
+  font-weight: 500;
+  font-size: 61px;
+  line-height: 120%;
+  letter-spacing: -3.66px;
+}
+
+.h3 {
+  font-weight: 500;
+  font-size: 49px;
+  line-height: 110%;
+  letter-spacing: -2.94px;
+}
+
+.h4 {
+  font-weight: 500;
+  font-size: 39px;
+  line-height: 110%;
+  letter-spacing: -2.34px;
+}
+
+.t-28 {
+  font-size: 28px;
+  line-height: 120%;
+  letter-spacing: -1.68px;
+}
+
+.t-21 {
+  font-size: 21px;
+  line-height: 135%;
+  letter-spacing: -1.26px;
+}
+
+.t-18 {
+  font-size: 18px;
+  line-height: 135%;
+  letter-spacing: -1.08px;
+}
+
+.t-13 {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 120%;
+  letter-spacing: -0.78px;
+}
+
+.text-bg {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    width: calc(100% + 5px);
+    height: calc(100% - 5px);
+    position: absolute;
+    bottom: 0;
+    left: -2.5px;
+    border-radius: 5px;
+    background-color: var(--accent-yellow);
+    z-index: -1;
+  }
+
+  &-transparent::before {
+    @media (max-width: 1339px) {
+      display: none;
+    }
+  }
+}
+
+.btn {
+  height: 54px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  border-radius: 5px;
+  border: 1px solid var(--black);
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--accent-yellow);
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      background-color: var(--accent-yellow);
+    }
+  }
+
+  @media (max-width: 1240px) {
+    height: 42px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1240px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .h1 {
+    font-size: 61px;
+  }
+
+  .h2 {
+    font-size: 49px;
+  }
+
+  .h3 {
+    font-size: 39px;
+  }
+
+  .h4 {
+    font-size: 31px;
+  }
+
+  .t-28 {
+    font-size: 21px;
+  }
+
+  .t-18 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .h1 {
+    font-size: 48px;
+  }
+
+  .h2 {
+    font-size: 40px;
+  }
+
+  .h3 {
+    font-size: 33px;
+  }
+
+  .t-28 {
+    font-size: 20px;
+  }
+
+  .t-21 {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+  }
+}
+
+@media (max-width: 576px) {
+  .h2 {
+    font-size: 38px;
+  }
+}
+
+@import "./blocks/header";
+@import "./blocks/intro";
+@import "./blocks/services";
+@import "./blocks/decision";
+@import "./blocks/benefits";
+@import "./blocks/building";
+@import "./blocks/purchase";
+@import "./blocks/partnership";
+@import "./blocks/partners";
+@import "./blocks/feedback";
+@import "./blocks/footer";

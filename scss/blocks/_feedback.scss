@@ -1,0 +1,178 @@
+.feedback {
+  margin-top: 250px;
+  background-color: var(--white-bg);
+
+  &__title {
+    span {
+      display: block;
+    }
+  }
+
+  &__inner {
+    margin-top: -70px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+
+  &__list {
+    margin-top: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      span {
+        color: var(--grey);
+      }
+    }
+
+    &-link {
+      margin-left: auto;
+      color: var(--black);
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
+    input {
+      padding: 0 20px;
+      color: rgba(#646464, 0.6);
+      border-radius: 5px;
+      background-color: var(--pure-grey);
+
+      &::placeholder {
+        color: rgba(#646464, 0.6);
+      }
+    }
+
+    &-name {
+      height: 60px;
+      grid-area: 1 / 1 / 2 / 3;
+    }
+
+    &-phone {
+      height: 60px;
+      grid-area: 2 / 1 / 3 / 2;
+    }
+
+    &-email {
+      height: 60px;
+      grid-area: 2 / 2 / 3 / 3;
+    }
+
+    &-message {
+      min-height: 150px;
+      grid-area: 3 / 1 / 4 / 3;
+      padding: 18px 20px;
+      color: rgba(#646464, 0.6);
+      border-radius: 5px;
+      background-color: var(--pure-grey);
+      resize: vertical;
+
+      &::placeholder {
+        color: rgba(#646464, 0.6);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-btn {
+      height: 60px;
+      color: var(--accent-blue);
+      border-color: var(--accent-blue);
+      grid-area: 4 / 1 / 5 / 3;
+    }
+  }
+
+  &__info {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1240px) {
+  .feedback {
+    margin-top: 180px;
+
+    &__title {
+      display: inline-block;
+      margin-left: calc(100% - 66.66666% + 10px);
+    }
+
+    &__inner {
+      margin-top: 25px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .feedback {
+    &__title {
+      margin: 0;
+      display: block;
+      text-align: center;
+      span {
+        display: none;
+      }
+    }
+
+    &__inner {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    &__content {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .feedback {
+    margin-top: 160px;
+  }
+}
+
+@media (max-width: 576px) {
+  .feedback {
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      &-name {
+        height: 40px;
+      }
+
+      &-phone {
+        height: 40px;
+      }
+
+      &-email {
+        height: 40px;
+      }
+
+      &-message {
+        min-height: 100px;
+      }
+
+      &-btn {
+        margin-top: 10px;
+        height: 40px;
+      }
+    }
+
+    &__info {
+      opacity: 0.6;
+    }
+  }
+}
